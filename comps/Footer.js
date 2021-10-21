@@ -55,8 +55,7 @@ const Footer = () => {
             Title Insurer 34-1252928 (not licensed in AK, HI, ID, IA, ME, MI,
             NH, NJ, VT and WY). Title Services are provided by Radian Title
             Insurance Inc. and Radian Settlement Services Inc., 1000 GSK Drive,
-            Suite 210, Coraopolis, PA 15108, Tel:
-            <a href="tel: 800.646.8258">800.646.8258</a>, FL- Non-Resident Title
+            Suite 210, Coraopolis, PA 15108, Tel: 800.646.8258, FL- Non-Resident Title
             Agency #A271379, both wholly owned subsidiaries of Radian Group
             Inc.. Radian Settlement Services Inc. is a title insurance agency
             for Radian Title Insurance Inc.
