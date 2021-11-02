@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NavbarRight from "./NavbarRight";
 
 const Navbar = () => {
   return (
@@ -27,17 +28,7 @@ const Navbar = () => {
             <a>About Us</a>
           </Link>
         </div>
-        <div className="nav-ele-right">
-          <Link href="/search">
-            <a>Search</a>
-          </Link>
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-          <Link href="/getaquote/">
-            <a>Get a Quote</a>
-          </Link>
-        </div>
+        <NavbarRight></NavbarRight>
       </div>
     </nav>
   );
