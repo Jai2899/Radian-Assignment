@@ -8,7 +8,7 @@ import Paper from '@mui/material/Paper';
 
 
 
-function Quote() {
+function dummy() {
   return (
     <>
     <Grid>
@@ -392,7 +392,7 @@ function Quote() {
   )
 }
 
-export default Quote
+export default dummy;
 
 
 
