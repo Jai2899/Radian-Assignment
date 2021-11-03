@@ -92,7 +92,7 @@ const quoteData = () => {
   return (
     <>
       <Head>
-        <title>Title Genius | Quote Data</title>
+        <title>Title Genius | Quote Data temp</title>
         <meta name="keywords" content="title-genius" />
       </Head>
       <div>
