@@ -1,3 +1,4 @@
+import { useQuery } from '@apollo/client';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,10 +9,16 @@ import Paper from '@mui/material/Paper';
 
 
 
+
+
+
+
 function Quote() {
+ 
+
   return (
     <>
-    <Grid>
+    <Grid >
       <Grid style={{ flexBasis: "100%", padding: "8px" }}>
         <Box className="jss80">
           <Box className="jss72">

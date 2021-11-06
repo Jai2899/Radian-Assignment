@@ -1,11 +1,11 @@
 import Head from "next/head";
 const _ = require("lodash");
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const purchasePrice=400000;
-const loanAmount=300000;
+const Purchaseprice=6000;
+const LoanAmount=5000;
 const QuoteDate = new Date().toLocaleDateString();
 const rebate=random(15,20);
-const originalTitleQuote=Math.ceil(purchasePrice/126);
+const originalTitleQuote=Math.ceil(Purchaseprice/126);
 const rebateSavings=Math.ceil((originalTitleQuote/100)*rebate);
 const radianQuote=_.round(originalTitleQuote-rebateSavings);
 const BuyerResponsibility=_.round(radianQuote*0.9);
@@ -68,8 +68,8 @@ const TTitleCharges=STitleCharges+BTitleCharges;
 //Taxes & Other Government Fees
 //-------------------------------------Buyer---------------------------------------------//
 const BDST=0;
-const BMST=(purchasePrice-loanAmount)*0.0105; 
-const BMIT=(purchasePrice-loanAmount)*0.006; ;
+const BMST=(Purchaseprice-LoanAmount)*0.0105; 
+const BMIT=(Purchaseprice-LoanAmount)*0.006; ;
 const BMRF=BAE906;
 const BDRF=BLTI;
 const BTTOGF=BDST+BMST+BMIT+BMRF+BDRF;
@@ -88,6 +88,11 @@ const TMRF=BMRF+SMRF;
 const TDRF=BDRF+SDRF;
 const TTTOGF=BTTOGF+STTOGF;
 
+
+
+
+
+
 const quoteData = () => {
   return (
     <>
@@ -97,8 +102,8 @@ const quoteData = () => {
       </Head>
       <div>
       <h1>Top Cards Details</h1>
-      <h3>Purchase Price: {purchasePrice}</h3>
-      <h3>Loan Amount: {loanAmount}</h3>
+      <h3>Purchase Price: {Purchaseprice}</h3>
+      <h3>Loan Amount: {LoanAmount}</h3>
       <h3>Quote Date: {QuoteDate}</h3>
       <h3>Original Title Count: {originalTitleQuote}</h3>
       <h3>Rebate Savings: {rebateSavings}</h3>
