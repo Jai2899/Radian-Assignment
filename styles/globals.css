@@ -16,11 +16,14 @@ a {
 }
 
 .content {
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 nav {
-  margin: 10px auto 80px;
+  margin: 15px;
   padding: 10px 0;
   display: flex;
   justify-content: flex-end;
@@ -157,14 +160,39 @@ footer .foot-ele-left span {
   outline: none;
 }
 
+.getQuote {
+  text-align: center;
+  border-radius: 5px;
+  padding-left: 50px;
+  max-width: 25%;
+  margin: 0;
+}
+
+.getQuote input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.getQuote button {
+  margin-top: 0px;
+  padding: 12px 80px;
+  color: #ffffff;
+  background-color: #002b49;
+  border-radius: 50px;
+}
 
 /* quote page CSS */
 
 .jss93 {
-  flex: 0 0 calc(60% - 17px);
-  display: flex;
-  margin-right: 8px;
-  margin-bottom: 16px;
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+  margin-left: 13%;
 }
 body {
   color: rgba(0, 0, 0, 0.87);
@@ -190,8 +218,8 @@ body {
   height: 46px;
   position: absolute;
   min-width: 260px;
-  transform: translate(-24px,-24px);
-  background: #5AA700;
+  transform: translate(-24px, -24px);
+  background: #5aa700;
   margin-bottom: 24px;
   border-top-left-radius: 12px;
 }
@@ -242,8 +270,7 @@ body {
   font-size: 42px;
   font-weight: 700;
   margin-top: 8px;
-  margin-bottom: 16px
-;
+  margin-bottom: 16px;
 }
 .jss104 {
   color: rgb(0, 166, 160);
@@ -289,23 +316,26 @@ body {
   flex-direction: row;
   justify-content: center;
 }
-.button{
-margin-top: 0px;
-padding: 12px 80px;
-color: #ffffff;
-background-color: #002b49;
+.button {
+  margin-top: 0px;
+  padding: 12px 80px;
+  color: #ffffff;
+  background-color: #002b49;
 }
 .jss115 {
-  flex: 0 0 40%;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  flex: 0 0 20%;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 8px;
+  margin-right: 13%;
   justify-content: flex-end;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 .jss78 {
   width: 100%;
-  border: 1px solid #00A6A0;
+  border: 1px solid #00a6a0;
   border-radius: 10px;
 }
 .jss388 {
@@ -319,11 +349,10 @@ background-color: #002b49;
   justify-content: flex-start;
 }
 
-
 .jss391 {
-    flex: 0 0 100%;
-    display: flex;
-    margin-top: 8px;
+  flex: 0 0 100%;
+  display: flex;
+  margin-top: 8px;
 }
 .jss392 {
   width: 100%;
@@ -334,8 +363,8 @@ background-color: #002b49;
   justify-content: space-between;
 }
 .jss79 {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 18px;
+  line-height: 20px;
 }
 .jss394 {
   width: max-content;
@@ -359,18 +388,18 @@ background-color: #002b49;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
-.grid{
+.grid {
   padding: 8px;
   flex-grow: 0;
-    max-width: 100%;
-    flex-basis: 100%;
-    width: calc(100% + 1px);
-   margin: -8px;
-   box-sizing: border-box;
-   width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+  max-width: 100%;
+  flex-basis: 100%;
+  width: calc(100% + 1px);
+  margin: -8px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 .jss149 {
   color: #002b49;
@@ -378,7 +407,7 @@ background-color: #002b49;
   font-weight: 800;
 }
 .jss72 {
-  color: #FA7268;
+  color: #fa7268;
   height: 100%;
   display: flex;
   font-size: 1.75rem;
@@ -389,24 +418,25 @@ background-color: #002b49;
   justify-content: flex-start;
 }
 .jss80 {
-  width: 100%;
+  margin: auto;
+  width: 75%;
+  padding: 10px;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
   margin-bottom: 16px;
   justify-content: space-between;
 }
-.jss85{
+.jss85 {
   margin: 0px 8px;
   padding: 7px 21px;
   font-size: 0.9375rem;
-  color: #002b49; 
-  border: 2px solid #002B49;
+  color: #002b49;
+  border: 2px solid #002b49;
   opacity: 1;
- font-size: .75rem;
-  line-height: .875rem;
-   border-radius: 16px;
-
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  border-radius: 16px;
 }
 .jss84 {
   flex: 0 0 30%;
@@ -418,10 +448,21 @@ background-color: #002b49;
   margin: 4px;
   max-width: 99%;
   width: calc(100% + 16px);
-    margin: -8px;
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+  margin: -8px;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.qd1 {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+.jss329 {
+  color: rgb(0, 43, 73);
+  font-size: 0.625rem;
+  font-weight: 500;
 }
