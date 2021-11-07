@@ -17,6 +17,18 @@ const Login = () => {
 
         const body = {email, password};
         if(isLogin) {
+            try {
+                const result = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(body),
+                });
+                console.log(result.status);
+                if(result.status === 200) console.log("Login Successfully!");
+                await Router.push('/');
+            } catch (error) {
+                console.error(error)
+            }
         } else {
             try {
                 const result = await fetch('http://localhost:3000/api/signup', {

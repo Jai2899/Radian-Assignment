@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const _ = require("lodash");
 //import _ from 'lodash';
+const SECREAT = "hfdjgfkhghfdrurkhgfjfdu";
 
 
 const { PrismaClient } = require("@prisma/client")
@@ -43,7 +44,7 @@ export const resolvers = {
                 // user:_.pick(user,["id","email"])
 
             }, SECREAT, { expiresIn: "1d" })
-            return ({ token, message: "loginsuccessfully" });
+            return ({ token, message: "login successfully" });
 
         },
         enterAmount: (_parent, { address, Purchaseprice, LoanAmount }) => {
