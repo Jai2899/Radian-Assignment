@@ -108,7 +108,7 @@ export const resolvers = {
             const TTPremium = STPremium + BTPremium;
             //-----------Endorsements------------//
             const TAE906 = SAE906 + BAE906;
-            const TAE8106 = SAE8106 + BAE906;
+            const TAE8106=SAE8106+BAE8106;
             const TTEndorsements = STEndorsements + BTEndorsements;
             //---------------------Settlement Charges---------------------//
             const TCF = SCF + BCF;

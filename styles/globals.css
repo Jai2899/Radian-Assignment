@@ -311,10 +311,13 @@ body {
 }
 .jss114 {
   display: flex;
-  flex-basis: 100%;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
+  position: relative;
+  left:25%;
+  margin-top: 0px;
+  padding: 12px 30px;
+  background-color: #002b49;
+  color: #ffffff;
+  border-radius: 50px;
 }
 .button {
   margin-top: 0px;
@@ -428,18 +431,15 @@ body {
   justify-content: space-between;
 }
 .jss85 {
-  margin: 0px 8px;
-  padding: 7px 21px;
-  font-size: 0.9375rem;
-  color: #002b49;
-  border: 2px solid #002b49;
-  opacity: 1;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  border-radius: 16px;
+  margin-top: 0px;
+  padding: 12px 30px;
+  background-color: #002b49;
+  color: #ffffff;
+  border-radius: 50px;
 }
 .jss84 {
   flex: 0 0 30%;
+  
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
