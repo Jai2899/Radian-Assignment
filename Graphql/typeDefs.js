@@ -75,7 +75,8 @@ type Amount{
   
  
 type Query{
-    charges:Amount
+    charges:[Amount]!
+    charge(id:ID):Amount
 }
 type Mutation{
     register(email:String!,password:String!):User

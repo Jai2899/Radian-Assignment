@@ -29,10 +29,14 @@ const getAQuote = () => {
         Purchaseprice: parseInt(purchase, 10),
         LoanAmount: parseInt(loan, 10),
       },
-    }).then(() => {
-      // history.go(-1);
-      router.push('/quoteData');
-    });
+     })
+     e.preventDefault();
+     router.push("./dummy")
+    //.then(() => {
+    //   // history.go(-1);
+    //   e.preventDefault();
+    //   router.push('/dummy');
+    // });
   };
   return (
     <>
