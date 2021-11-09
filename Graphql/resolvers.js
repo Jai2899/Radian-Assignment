@@ -1,8 +1,8 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const _ = require("lodash");
-//import _ from 'lodash';
-const SECREAT = "hfdjgfkhghfdrurkhgfjfdu";
+
+export const SECREAT = "hfdjgfkhghfdrurkhgfjfdu";
 
 
 const { PrismaClient } = require("@prisma/client")

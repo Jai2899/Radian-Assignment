@@ -2,8 +2,15 @@ import Head from "next/head";
 import { useState } from 'react';
 import Router from 'next/router'
 
-
+export var isLogOut = false;
 const Login = () => {
+    const [isLogout , setIsLogout] = useState(false);
+    const [isShowSignup, setIsShowSignup] = useState(false);
+    const [isShowLogin, setIsShowLogin] = useState(false);
+    const [isSignup, setIsSignup] = useState(false);
+    const [isLoginMessage, setIsLoginMessage] = useState(false);
+    const [errorMessageSignup, setErrorMessageSignup] = useState("");
+    const [errorMessageLogin, setErrorMessageLogin] = useState("");
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,32 +23,54 @@ const Login = () => {
         event.preventDefault();
 
         const body = {email, password};
+
         if(isLogin) {
-            try {
                 const result = await fetch('http://localhost:3000/api/login', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(body),
                 });
-                console.log(result.status);
-                if(result.status === 200) console.log("Login Successfully!");
-                await Router.push('/');
-            } catch (error) {
-                console.error(error)
+            if(result.status === 200) {
+                setIsSignup(false);
+                setIsLogin(true);
+                setIsShowLogin(true);
+                setIsShowSignup(false);
+                setIsLoginMessage(true);
+                setIsLogout(true);
+                isLogOut = true;
+                // console.log(result.status)
+                // console.log(isLogOut);
+                await Router.push('/getaquote');
+            }
+            if(result.status === 500) {
+                setErrorMessageLogin("Invalid Credentials!");
+                setIsLoginMessage(false);
+                setIsShowLogin(true);
+                setIsSignup(false);
             }
         } else {
-            try {
                 const result = await fetch('http://localhost:3000/api/signup', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(body),
                 });
-                await Router.push('/');
-            } catch (error) {
-                console.error(error)
+            if(result.status === 500 ) {
+                setErrorMessageSignup("User already Exists.");
+                setIsShowSignup(true);
+                setIsSignup(false);
+                setIsShowLogin(false);
+            }
+
+            if (result.status === 200) {
+                setIsSignup(true);
+                setIsLogin(true);
+                setIsShowLogin(false);
+                setIsShowSignup(true);
+
+                await Router.push('/login');
             }
         }
-        }
+    }
     return (
         <>
             <Head>
@@ -68,6 +97,16 @@ const Login = () => {
                         >
                             {isLogin ? 'Create new account' : 'Login with existing account'}
                         </button>
+                        <h2 style={{
+                            display: isShowSignup?"block":"none"
+                        }}>
+                            {isSignup ? "Your account is created!" : errorMessageSignup}
+                        </h2>
+                        <h2 style={{
+                            display: isShowLogin?"block":"none"
+                        }}>
+                            {isLoginMessage ? "Login Successfully!" : errorMessageLogin}
+                        </h2>
                     </div>
                 </form>
             </div>
