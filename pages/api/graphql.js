@@ -2,8 +2,9 @@ import { ApolloServer } from "apollo-server-micro";
 import { typeDefs } from "../../Graphql/typeDefs";
 import { resolvers } from "../../Graphql/resolvers";
 import Cors from "micro-cors";
+import { SECREAT} from "../../Graphql/resolvers";
+
 const cors = Cors();
-export const SECREAT = "hfdjgfkhghfdrurkhgfjfdu";
 const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
