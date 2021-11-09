@@ -31,6 +31,9 @@ const getAQuote = () => {
       },
      })
      e.preventDefault();
+     sessionStorage.setItem('address',adress);
+      sessionStorage.setItem('Purchaseprice',parseInt(purchase, 10));
+      sessionStorage.setItem('LoanAmount',parseInt(loan, 10));
      router.push("./dummy")
     //.then(() => {
     //   // history.go(-1);

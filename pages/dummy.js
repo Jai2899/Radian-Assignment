@@ -99,9 +99,15 @@ function dummy() {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   if (data) {
+    const LoanAmount = sessionStorage.getItem('LoanAmount');
+    const address = sessionStorage.getItem('address');
+    const Purchaseprice = sessionStorage.getItem('Purchaseprice');
+    console.log(LoanAmount);
+    console.log(address);
+    console.log(Purchaseprice);
     const filterd =
       data &&
-      data.charges.filter((data) => data.id === "61896c65afcf050fd0c70fa0");
+      data.charges.filter((data) =>  data.address==address);
     console.log(filterd);
   }
 
