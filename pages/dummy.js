@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
+import Router from "next/router"
 import {
   Table,
   TableCell,
@@ -102,13 +103,16 @@ function dummy() {
     const LoanAmount = sessionStorage.getItem('LoanAmount');
     const address = sessionStorage.getItem('address');
     const Purchaseprice = sessionStorage.getItem('Purchaseprice');
+    
     console.log(LoanAmount);
     console.log(address);
     console.log(Purchaseprice);
+ 
     const filterd =
       data &&
-      data.charges.filter((data) =>  data.address==address);
+      data.charges.filter((data) =>  data.address==address && data.Purchaseprice==Purchaseprice&&data.LoanAmount==LoanAmount);
     console.log(filterd);
+   //Router.reload();
   }
 
   return (

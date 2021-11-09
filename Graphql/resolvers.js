@@ -200,6 +200,7 @@ export const resolvers = {
                     TMRF,
                     TDRF,
                     TTTOGF,
+                    
                 }
             })
             return Amount;

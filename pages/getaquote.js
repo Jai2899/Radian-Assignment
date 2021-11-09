@@ -2,16 +2,19 @@ import Head from "next/head";
 import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
 import { useRouter } from 'next/router'
+import Router from "next/router";
 const AMOUNT = gql`
   mutation Amount($address: String, $Purchaseprice: Int, $LoanAmount: Int) {
     enterAmount(
       address: $address
       Purchaseprice: $Purchaseprice
       LoanAmount: $LoanAmount
+      
     ) {
       address
       Purchaseprice
       LoanAmount
+      
     }
   }
 `;
@@ -20,26 +23,37 @@ const getAQuote = () => {
   const [purchase, setPurchase] = useState("");
   const [loan, setLoan] = useState("");
   const [enterAmount] = useMutation(AMOUNT);
+
+
   const router = useRouter()
   const onSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
+    //const dummyAmount=parseInt(purchase)+parseInt(loan);
     enterAmount({
       variables: {
         address: adress,
         Purchaseprice: parseInt(purchase, 10),
         LoanAmount: parseInt(loan, 10),
+        
       },
-     })
-     e.preventDefault();
-     sessionStorage.setItem('address',adress);
-      sessionStorage.setItem('Purchaseprice',parseInt(purchase, 10));
-      sessionStorage.setItem('LoanAmount',parseInt(loan, 10));
-     router.push("./dummy")
-    //.then(() => {
-    //   // history.go(-1);
-    //   e.preventDefault();
-    //   router.push('/dummy');
-    // });
+    })
+    e.preventDefault();
+    router.push("./dummy")
+
+    sessionStorage.setItem('address', adress);
+    sessionStorage.setItem('Purchaseprice', parseInt(purchase, 10));
+    sessionStorage.setItem('LoanAmount', parseInt(loan, 10));
+    
+        //router.reload("./dummy")
+        // router.replace("./dummy")
+    
+        //.then(() => {
+        //   // history.go(-1);
+        //   e.preventDefault();
+        //   router.push('/dummy');
+        // });
+
+
   };
   return (
     <>

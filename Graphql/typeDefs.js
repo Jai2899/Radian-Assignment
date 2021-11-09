@@ -70,7 +70,7 @@ type Amount{
   TMRF:                 Float
   TDRF:                 Float
   TTTOGF:               Float
-
+  
 }
   
  
